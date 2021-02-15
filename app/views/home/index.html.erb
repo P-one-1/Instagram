@@ -1,2 +1,30 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="posts">
+    <% @posts.each do |post| %>
+        <section class="post">
+            <!-- post view -->
+            <div class="user">
+                <div class="avatar">
+                    <% if post.user.avatar.attached? %>
+                        <%= link_to user_path(post.user) do %>
+                            <%= image_tag post.user.avatar %>
+                        <% end %>
+                    <% end %>
+                </div>
+                <%# <div class="avatar"> %>
+                    <%# image_tag "/assets/curiosity_profile.png" %>
+                    <%# <img src="/assets/curiosity_profile.png"> %>
+                <%# </div> %>
+                <%= link_to post.user.username, user_path(post.user), class: 'username' %>
+            </div>
+            <%= image_tag post.image, class: 'main-image' %>
+            <div class="description">
+                <%= post.description %>
+            </div>
+        </section>
+    <% end %>
+    <div class="homepage">
+        <span class="pagination">
+            <%= paginate @posts %>
+        </span>
+    </div>
+</div>

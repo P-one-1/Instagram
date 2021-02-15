@@ -38,7 +38,7 @@
         padding: 4px 10px;
         font-weight: 500;
     }
-    ul.posts {
+    ul.count {
         padding-left: 0;
         > li {
             display: inline;
@@ -177,5 +177,6 @@
     }
     input[type="submit"] {
         color: white;
+        margin-left: 142px;
     }
 }

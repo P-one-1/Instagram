@@ -2,8 +2,14 @@
     <div class="profile row">
         <div class="col-md-4 avatar">
             <div class="wrapper">
-                <img src="https://instuigram-avatar.jpg">
+                <% if current_user.avatar.attached? %>
+                    <%= image_tag current_user.avatar %>
+                <%end %>
             </div>
+            <%# <div class="wrapper"> %>
+                <%# image_tag "/assets/curiosity_profile.png" %>
+                <%# <img src="/assets/curiosity_profile.png"> %>
+            <%# </div> %>
         </div>
             
         <div class="col-md-8 basic-info">
@@ -11,8 +17,8 @@
                 <h2 class="username"><%= current_user.username %></h2>
                 <%= link_to "<button>Edit Profile</button>".html_safe, edit_user_path(current_user), class: "edit-profile" %>
             </div>
-            <ul class="posts">
-                <li><span>12</span> posts</li>
+            <ul class="count">
+                <li><span><%= @posts.count %></span> posts</li>
                 <li><span>195</span> followers</li>
                 <li><span>345</span> following</li>
             </ul>
@@ -42,13 +48,9 @@
 </div>
 
 <div class="user-images">
-    <div class="wrapper">
-        <img src="your_image_url">
-    </div>
-    <div class="wrapper">
-        <img src="your_image_url">
-    </div>
-    <div class="wrapper">
-        <img src="your_image_url">
-    </div>
+    <% @posts.each do |post|%>
+        <div class="wrapper">
+            <%=image_tag post.image %>
+        </div>
+    <% end %>
 </div>
