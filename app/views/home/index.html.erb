@@ -18,6 +18,10 @@
             </div>
             <%= image_tag post.image, class: 'main-image' %>
             <div class="description">
+                <div class="icon">
+                    <i class="fa fa-heart-o" style="font-size:20px"></i>
+                    <i class="fa fa-comment-o" style="font-size:22px; margin-left: 10px;"></i>
+                </div>
                 <% post.description.to_s.split(' ').each do |word| %>
                     <% if word.start_with?('#') %>
                         <%= link_to word, search_path(query: word) %>
