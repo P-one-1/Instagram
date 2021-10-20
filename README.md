@@ -16,3 +16,6 @@
 
 * Use this command to deploy the app:
     'git push heroku master'
+
+* Run migration on Heroku explicitly using command:
+    'heroku run rails db:migrate'
