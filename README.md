@@ -1,24 +1,18 @@
-# README
+# HEROKU DEPLOY FOR EXISTING GIT REPO
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Enter into project directory and enter command:
+    'heroku login'
 
-Things you may want to cover:
+* Login to Heroku and create a repo/app.
 
-* Ruby version
+* Connect this app with git repo you wish to deploy.
 
-* System dependencies
+* Missing `secret_key_base` for 'production' environment, set this string with `rails credentials:edit`
+    *   run 'EDITOR=vim rails credentials:edit'
+    *   save and commit config/credentials.yml.enc
 
-* Configuration
+* Add Heroku remote url to project repo using command:
+    'heroku git:remote -a APP-NAME'
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Use this command to deploy the app:
+    'git push heroku master'
