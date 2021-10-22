@@ -19,3 +19,9 @@
 
 * Run migration on Heroku explicitly using command:
     `heroku run rails db:migrate`
+
+
+* Check server logs:-
+    * See previous logs: `heroku logs -n 1500`
+    * Tail the logs live: `heroku logs -t`
+ActiveModel::RangeError (918853101413 is out of range for ActiveModel::Type::Integer with limit 4 bytes):
