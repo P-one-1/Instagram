@@ -17,9 +17,11 @@
 * Use this command to deploy the app:
     `git push heroku master`
 
+
+# HEROKU COMMANDS
+
 * Run migration on Heroku explicitly using command:
     `heroku run rails db:migrate`
-
 
 * Check server logs:-
     * See previous logs: `heroku logs -n 1500`
