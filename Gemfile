@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.8'
@@ -66,3 +66,4 @@ gem 'jquery-rails'
 gem 'font-awesome-rails'
 gem 'devise'
 gem 'kaminari'
+gem 'rails_admin', '~> 2.0'
