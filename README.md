@@ -26,3 +26,6 @@
 * Check server logs:-
     * See previous logs: `heroku logs -n 1500`
     * Tail the logs live: `heroku logs -t`
+
+* Access server console:-
+    * heroku run rails console --app app_name `Need to add app name for the first time, to connect with server(heroku) app.`

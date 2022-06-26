@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  get 'search/index'
   devise_for :users, controllers: {sessions: "sessions"}
   resources :users, only: [:show, :edit, :update]
 
@@ -10,5 +9,7 @@ Rails.application.routes.draw do
 
   get 'search' => 'search#index'
   
-  root to: 'home#index'
+  devise_scope :user do
+    root to: 'sessions#new'
+  end
 end
